@@ -7,10 +7,11 @@ class DetailWeather extends React.Component {
 	}
 
   render() {
-  	var iconname = "images/weather-icons/"+this.props.icon+".svg"
+    console.log("=============== in Detail Weather render =====================")
+    console.log(this.props)
     return (
     	<div>
-        <SimpleWeather icon={this.props.icon} date={this.props.date} />
+        <SimpleWeather icon={this.props.detail.icon} date={this.props.date} />
         <p>{this.props.city}</p>
         <p>{this.props.detail.main}</p>
       </div>
