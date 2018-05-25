@@ -1,22 +1,15 @@
 import React from 'react'
 import SimpleWeather from './SimpleWeather'
 
-class DetailWeather extends React.Component {
-	constructor(props){
-		super(props)
-	}
-
-  render() {
-    console.log("=============== in Detail Weather render =====================")
-    console.log(this.props)
+const DetailWeather = ()=>{
+    var props = this.props.location.state
     return (
     	<div>
-        <SimpleWeather icon={this.props.detail.icon} date={this.props.date} />
-        <p>{this.props.city}</p>
-        <p>{this.props.detail.main}</p>
+        <SimpleWeather icon={props.detail.icon} date={props.date} />
+        <p>{props.city}</p>
+        <p>{props.detail.main}</p>
       </div>
     )
-  }
 }
 
 

@@ -1,19 +1,26 @@
 import React from 'react'
-import {render} from 'react-dom'
-
-import {HashRouter as Router} from 'react-router-dom'
+import {HashRouter as Router,
+		Route} from 'react-router-dom'
 import Header from './Header'
-import Body from './Body'
+import Home from './Home'
+import Display from './Display'
+import DetailWeather from './DetailWeather'
+
+import styles from './stylesheets/style.css'
 class App extends React.Component{
 
 	render(){
 		return (
 			<Router>
-			<div id="container">
+			<div className={styles.outcontainer}>
 				<Header/>
-				<Body/>
+				<div className={styles.container}>
+					<Route exact path='/' component={Home} />
+	          		<Route exact path='/forecast' component={Display}/>
+	          		<Route path='/forecast/details' component={DetailWeather}/>
+          		</div>
 			</div>
 			</Router>
-	)}
+	)}             
 }
 export default App
